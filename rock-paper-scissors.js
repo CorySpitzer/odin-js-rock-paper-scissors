@@ -38,22 +38,22 @@ function play() {
   if (humanChoice === computerChoice) {
     console.log("It's a tie");
   } else if (humanChoice === 'rock' && computerChoice === 'paper') {
-    console.log('Computer won');
+    console.log('Computer won: Paper beats Rock');
     computerScore++;
   } else if (humanChoice === 'rock' && computerChoice === 'scissors') {
-    console.log('Human won');
+    console.log('Human won: Rock beats Scissors');
     humanScore++;
   } else if (humanChoice === 'paper' && computerChoice === 'rock') {
-    console.log('Human won');
+    console.log('Human won: Paper beats Rock');
     humanScore++;
   } else if (humanChoice === 'paper' && computerChoice === 'scissors') {
-    console.log('Computer won');
+    console.log('Computer won: Scissors beat Paper');
     computerScore++;
   } else if (humanChoice === 'scissors' && computerChoice === 'rock') {
-    console.log('Computer won');
+    console.log('Computer won: Rock beats Scissors');
     computerScore++;
   } else if (humanChoice === 'scissors' && computerChoice === 'paper') {
-    console.log('Human won');
+    console.log('Human won: Scissors beat Paper');
     humanScore++;
   }
 }
