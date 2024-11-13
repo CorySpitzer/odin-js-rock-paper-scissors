@@ -30,7 +30,7 @@ function getHumanChoice() {
   return choices[choice - 1];
 }
 
-function play() {
+function playRound() {
   let humanScore = 0;
   let computerScore = 0;
   let humanChoice = getHumanChoice();
@@ -58,7 +58,14 @@ function play() {
   }
 }
 
-play();
+function playRounds(numberOfRounds) {
+  for (let i = 0; i < numberOfRounds; i++) {
+    playRound();
+    console.log("Done")
+  }
+}
+
+playRounds(2);
 
 // console.log(computerChoice());
 // console.log(computerChoice());
