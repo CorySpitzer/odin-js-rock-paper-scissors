@@ -14,7 +14,18 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-  let choice = prompt('What do you choose? 1:rock, 2:paper, 3:scissors');
+  let choice = 0;
+
+  // check if choice is 1 to 3 and keep asking if not
+  while (true) {
+    choice = Number(prompt('What do you choose? 1: rock, 2: paper, 3: scissors'));
+    console.log(Number.isInteger(choice))
+    if (Number.isInteger(choice) && choice <= 3 && choice >= 1) {
+      // console.log('break hit');
+      break;
+    }  
+  }
+
   let choices = ['rock', 'paper', 'scissors'];
   return choices[choice - 1];
 }
