@@ -1,4 +1,4 @@
-// console.log('test2');
+// document.getElementById('results').textContent='test2';
 
 // Add event listeners to buttons
 let rock = document.getElementById('rock');
@@ -27,9 +27,9 @@ function getComputerChoice() {
 //   // check if choice is 1 to 3 and keep asking if not
 //   while (true) {
 //     choice = Number(prompt('What do you choose? 1: rock, 2: paper, 3: scissors'));
-//     console.log(Number.isInteger(choice))
+//     document.getElementById('results').textContent=Number.isInteger(choice)
 //     if (Number.isInteger(choice) && choice <= 3 && choice >= 1) {
-//       // console.log('break hit');
+//       // document.getElementById('results').textContent='break hit';
 //       break;
 //     }  
 //   }
@@ -43,24 +43,24 @@ function playRound(humanChoice) {
   let computerScore = 0;
   let computerChoice = getComputerChoice();
   if (humanChoice === computerChoice) {
-    console.log(`It's a tie, both did ${computerChoice}.`);
+    document.getElementById('results').textContent=`It's a tie, both did ${computerChoice}.`;
   } else if (humanChoice === 'rock' && computerChoice === 'paper') {
-    console.log('Computer won: Paper beats Rock');
+    document.getElementById('results').textContent='Computer won: Paper beats Rock';
     computerScore++;
   } else if (humanChoice === 'rock' && computerChoice === 'scissors') {
-    console.log('Human won: Rock beats Scissors');
+    document.getElementById('results').textContent='Human won: Rock beats Scissors';
     humanScore++;
   } else if (humanChoice === 'paper' && computerChoice === 'rock') {
-    console.log('Human won: Paper beats Rock');
+    document.getElementById('results').textContent='Human won: Paper beats Rock';
     humanScore++;
   } else if (humanChoice === 'paper' && computerChoice === 'scissors') {
-    console.log('Computer won: Scissors beat Paper');
+    document.getElementById('results').textContent='Computer won: Scissors beat Paper';
     computerScore++;
   } else if (humanChoice === 'scissors' && computerChoice === 'rock') {
-    console.log('Computer won: Rock beats Scissors');
+    document.getElementById('results').textContent='Computer won: Rock beats Scissors';
     computerScore++;
   } else if (humanChoice === 'scissors' && computerChoice === 'paper') {
-    console.log('Human won: Scissors beat Paper');
+    document.getElementById('results').textContent='Human won: Scissors beat Paper';
     humanScore++;
   }
 }
@@ -68,13 +68,13 @@ function playRound(humanChoice) {
 // function playRounds(numberOfRounds) {
 //   for (let i = 0; i < numberOfRounds; i++) {
 //     playRound();
-//     console.log("Done")
+//     document.getElementById('results').textContent="Done)
 //   }
 // }
 
 // playRounds(2);
 
-// console.log(computerChoice());
-// console.log(computerChoice());
-// console.log(computerChoice());
-// console.log(computerChoice());
+// document.getElementById('results').textContent=computerChoice();
+// document.getElementById('results').textContent=computerChoice();
+// document.getElementById('results').textContent=computerChoice();
+// document.getElementById('results').textContent=computerChoice();
