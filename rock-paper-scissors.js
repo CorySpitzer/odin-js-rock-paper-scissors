@@ -1,5 +1,13 @@
 // console.log('test2');
 
+// Add event listeners to buttons
+let rock = document.getElementById('rock');
+let paper = document.getElementById('paper');
+let scissors = document.getElementById('scissors');
+rock.addEventListener('click', () => playRound('rock'));
+paper.addEventListener('click', () => playRound('paper'));
+scissors.addEventListener('click', () =>  playRound('scissors'));
+
 function randomInt(min, max) {
   // convert non-ints to ints
   min = Math.ceil(min);
@@ -13,30 +21,29 @@ function getComputerChoice() {
   return choices[randomInt(0, 2)];
 }
 
-function getHumanChoice() {
-  let choice = 0;
+// function getHumanChoice() {
+//   let choice = 0;
 
-  // check if choice is 1 to 3 and keep asking if not
-  while (true) {
-    choice = Number(prompt('What do you choose? 1: rock, 2: paper, 3: scissors'));
-    console.log(Number.isInteger(choice))
-    if (Number.isInteger(choice) && choice <= 3 && choice >= 1) {
-      // console.log('break hit');
-      break;
-    }  
-  }
+//   // check if choice is 1 to 3 and keep asking if not
+//   while (true) {
+//     choice = Number(prompt('What do you choose? 1: rock, 2: paper, 3: scissors'));
+//     console.log(Number.isInteger(choice))
+//     if (Number.isInteger(choice) && choice <= 3 && choice >= 1) {
+//       // console.log('break hit');
+//       break;
+//     }  
+//   }
 
-  let choices = ['rock', 'paper', 'scissors'];
-  return choices[choice - 1];
-}
+//   let choices = ['rock', 'paper', 'scissors'];
+//   return choices[choice - 1];
+// }
 
-function playRound() {
+function playRound(humanChoice) {
   let humanScore = 0;
   let computerScore = 0;
-  let humanChoice = getHumanChoice();
   let computerChoice = getComputerChoice();
   if (humanChoice === computerChoice) {
-    console.log("It's a tie");
+    console.log(`It's a tie, both did ${computerChoice}.`);
   } else if (humanChoice === 'rock' && computerChoice === 'paper') {
     console.log('Computer won: Paper beats Rock');
     computerScore++;
@@ -58,14 +65,14 @@ function playRound() {
   }
 }
 
-function playRounds(numberOfRounds) {
-  for (let i = 0; i < numberOfRounds; i++) {
-    playRound();
-    console.log("Done")
-  }
-}
+// function playRounds(numberOfRounds) {
+//   for (let i = 0; i < numberOfRounds; i++) {
+//     playRound();
+//     console.log("Done")
+//   }
+// }
 
-playRounds(2);
+// playRounds(2);
 
 // console.log(computerChoice());
 // console.log(computerChoice());
