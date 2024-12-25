@@ -7,6 +7,9 @@ let scissors = document.getElementById('scissors');
 rock.addEventListener('click', () => playRound('rock'));
 paper.addEventListener('click', () => playRound('paper'));
 scissors.addEventListener('click', () =>  playRound('scissors'));
+let humanScore = 0;
+let computerScore = 0;
+
 
 function randomInt(min, max) {
   // convert non-ints to ints
@@ -21,26 +24,15 @@ function getComputerChoice() {
   return choices[randomInt(0, 2)];
 }
 
-// function getHumanChoice() {
-//   let choice = 0;
+function updateScore() {
+  let humanScoreP = document.getElementById('humanScore');
+  let computerScoreP = document.getElementById('computerScore');
+  humanScoreP.textContent = humanScore;
+  computerScoreP.textContent = computerScore;
 
-//   // check if choice is 1 to 3 and keep asking if not
-//   while (true) {
-//     choice = Number(prompt('What do you choose? 1: rock, 2: paper, 3: scissors'));
-//     document.getElementById('results').textContent=Number.isInteger(choice)
-//     if (Number.isInteger(choice) && choice <= 3 && choice >= 1) {
-//       // document.getElementById('results').textContent='break hit';
-//       break;
-//     }  
-//   }
-
-//   let choices = ['rock', 'paper', 'scissors'];
-//   return choices[choice - 1];
-// }
+}
 
 function playRound(humanChoice) {
-  let humanScore = 0;
-  let computerScore = 0;
   let computerChoice = getComputerChoice();
   if (humanChoice === computerChoice) {
     document.getElementById('results').textContent=`It's a tie, both did ${computerChoice}.`;
@@ -63,6 +55,8 @@ function playRound(humanChoice) {
     document.getElementById('results').textContent='Human won: Scissors beat Paper';
     humanScore++;
   }
+  updateScore();
+  // updateScore(humanScore, computerScore);
 }
 
 // function playRounds(numberOfRounds) {
