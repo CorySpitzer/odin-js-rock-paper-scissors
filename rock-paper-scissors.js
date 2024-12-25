@@ -9,7 +9,13 @@ paper.addEventListener('click', () => playRound('paper'));
 scissors.addEventListener('click', () =>  playRound('scissors'));
 let humanScore = 0;
 let computerScore = 0;
+let newGame = document.getElementById('newGame');
+newGame.addEventListener('click', () => resetGame());
 
+function resetGame() {
+  // Refresh the page
+  location.reload();
+}
 
 function randomInt(min, max) {
   // convert non-ints to ints
@@ -29,7 +35,17 @@ function updateScore() {
   let computerScoreP = document.getElementById('computerScore');
   humanScoreP.textContent = humanScore;
   computerScoreP.textContent = computerScore;
+}
 
+function displayWinner() {
+  let winner = document.getElementById('winner');
+  if (computerScore >= 2) {
+    winner.textContent = "Computer Won the Match!"
+    winner = true;
+  } else if (humanScore >= 2) {
+    winner.textContent = "Human Won the Match!"
+    winner = true;
+  }
 }
 
 function playRound(humanChoice) {
@@ -56,19 +72,5 @@ function playRound(humanChoice) {
     humanScore++;
   }
   updateScore();
-  // updateScore(humanScore, computerScore);
+  displayWinner();
 }
-
-// function playRounds(numberOfRounds) {
-//   for (let i = 0; i < numberOfRounds; i++) {
-//     playRound();
-//     document.getElementById('results').textContent="Done)
-//   }
-// }
-
-// playRounds(2);
-
-// document.getElementById('results').textContent=computerChoice();
-// document.getElementById('results').textContent=computerChoice();
-// document.getElementById('results').textContent=computerChoice();
-// document.getElementById('results').textContent=computerChoice();
